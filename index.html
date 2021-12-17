@@ -38,8 +38,19 @@
         </header>
         <main>
             <div class="add-to-do d-flex">
-                <input type="text" placeholder="Insert new To Do">
-                <i class="fas fa-plus-circle"></i>
+                <input @keyup.enter='add' v-model='textNew' type="text" placeholder="Insert new To Do">
+                <i @click='add' class="fas fa-plus-circle"></i>
+            </div>
+            <div class="to-do-list">
+                <ul>
+                    <li v-for='(element, index) in todo' class="to-do-container d-flex">
+                        <div :class="(element.done == true) ? 'done' : ''" class="to-do d-flex">
+                            <i @click='checked' class="fas fa-check-circle"></i>
+                            <h3>{{element.text}}</h3>
+                        </div>
+                        <i class="far fa-times-circle"></i>
+                    </li>
+                </ul>
             </div>
         </main>
     </div>

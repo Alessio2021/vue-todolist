@@ -120,7 +120,9 @@ main .far {
     margin-left: 1em;
 }
 
-.done {
+.done > i {
     color: rgb(4, 212, 4);
+}
+.done > h3 {
     text-decoration: line-through;
 }

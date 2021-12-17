@@ -44,11 +44,11 @@
             <div class="to-do-list">
                 <ul>
                     <li v-for='(element, index) in todo' class="to-do-container d-flex">
-                        <div :class="(element.done == true) ? 'done' : ''" class="to-do d-flex">
-                            <i @click='checked' class="fas fa-check-circle"></i>
+                        <div @click='checked(index)' :class="(element.done == true) ? 'done' : ''" class="to-do d-flex">
+                            <i  class="fas fa-check-circle"></i>
                             <h3>{{element.text}}</h3>
                         </div>
-                        <i class="far fa-times-circle"></i>
+                        <i @click="cancel" class="far fa-times-circle"></i>
                     </li>
                 </ul>
             </div>
